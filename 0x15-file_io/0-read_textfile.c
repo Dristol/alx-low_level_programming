@@ -14,6 +14,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	ssize_t x, r, w;
 	char *buffer;
 
+
 	if (filename == NULL)
 		return (0);
 
@@ -24,6 +25,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	x = open(filename, O_RDONLY);
 	r = read(x, buffer, letters);
 	w = write(STDOUT_FILENO, buffer, r);
+
 
 	if (x == -1 || r == -1 || w == -1 || w != r)
 	{
